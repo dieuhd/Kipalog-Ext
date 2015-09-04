@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app="KipalogExt">
+<head>
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css styles/main.css -->
+    <link href="styles/main.css" rel="stylesheet">
+    <!-- endbuild -->
+</head>
+<body>
+<div id="PaginationCtrl" ng-controller="OptionCtrl">
+    <div>Max page: <select name="maxpage" ng-model="max_page">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        </select>
+    </div>
+    <nav class="ng-scope">
+        <ul class="pagination">
+            <li ng-click="previousPage()" ng-class="{'disabled': currentPage == 1}"><a aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+            <li ng-repeat="p in pages" ng-class="{'active':currentPage == p }" ng-click="gotoPage(p)"
+                class="ng-scope"><a ng-bind="p">1</a></li>
+            <li ng-click="nextPage()" ng-class="{'disabled': currentPage == max_page}"><a aria-label="Next"><span aria-hidden="true">»</span></a></li>
+        </ul>
+    </nav>
+</div>
+<script src="bower_components/angular/angular.js"></script>
+<script src="scripts/options.js"></script>
+<!-- endbuild -->
+</body>
+</html>
