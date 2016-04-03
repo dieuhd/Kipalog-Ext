@@ -47,8 +47,10 @@
   ],
   "permissions": [
     "tabs",
+    "notifications",
     "cookies",
     "management",
+    "storage",
     "*://kipalog.com/*"
   ]
 }
